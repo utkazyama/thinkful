@@ -1,0 +1,124 @@
+SELECT *
+FROM houseprices
+WHERE lotarea > 10000 AND yearbuilt <= 1995;
+
+SELECT *
+FROM houseprices
+WHERE lotarea > 10000 OR yearbuilt <= 1995;
+
+SELECT *
+FROM houseprices
+WHERE yearbuilt = 1995 OR yearbuilt = 1996;
+
+SELECT *
+FROM houseprices
+WHERE (yearbuilt = 1995 OR yearbuilt = 1996)
+AND (roofstyle = 'Gable' OR roofstyle = 'Hip');
+
+SELECT *
+FROM houseprices
+WHERE yearbuilt >= 1995 AND yearbuilt <=2000;
+
+SELECT *
+FROM houseprices
+WHERE yearbuilt BETWEEN 1995 AND 2000;
+
+SELECT *
+FROM houseprices
+WHERE roofstyle NOT IN('Gable', 'Hip', 'Mansard');
+
+SELECT *
+FROM houseprices
+WHERE alley IS NOT NULL;
+
+SELECT *
+FROM houseprices
+WHERE heating LIKE 'Gas%';
+
+SELECT *
+FROM houseprices
+WHERE heating LIKE '___W';
+
+SELECT *
+FROM houseprices
+WHERE mszoning ILIKE 'rl';
+
+SELECT *
+FROM houseprices
+WHERE mszoning ILIKE 'rl' OR mszoning ILIKE 'Rm';
+
+SELECT saleprice, salecondition
+FROM houseprices
+WHERE yearbuilt BETWEEN 1980 AND 1985
+	AND roofstyle = 'Gable'
+	AND alley IS NOT NULL
+AND neighborhood NOT IN ('NAmes', 'CollgCr');
+
+SELECT *
+FROM houseprices
+ORDER BY lotarea;
+
+SELECT lotarea
+FROM houseprices
+ORDER BY lotarea DESC;
+
+SELECT mszoning
+FROM houseprices
+ORDER BY mszoning;
+
+SELECT mszoning
+FROM houseprices
+ORDER BY mszoning DESC;
+
+SELECT yearbuilt, saleprice
+FROM houseprices
+ORDER BY yearbuilt DESC, saleprice DESC;
+
+SELECT yearbuilt, saleprice
+FROM houseprices
+ORDER BY saleprice DESC, yearbuilt DESC;
+
+SELECT yearbuilt, saleprice
+FROM houseprices
+WHERE yearbuilt BETWEEN 1990 AND 2000
+ORDER BY yearbuilt DESC, saleprice DESC;
+
+SELECT *
+FROM houseprices
+ORDER BY id DESC
+LIMIT 100;
+
+SELECT saleprice
+FROM houseprices
+WHERE yearbuilt < 1950
+ORDER BY saleprice DESC
+LIMIT 10;
+
+SELECT 10 * overallcond
+FROM houseprices;
+
+SELECT COUNT(*)
+FROM houseprices;
+
+SELECT COUNT(*) AS count_records
+FROM houseprices;
+
+SELECT COUNT(yearbuilt) AS count_yearbuilt, COUNT(alley) AS count_alley
+FROM houseprices;
+
+SELECT COUNT(*)
+FROM houseprices
+WHERE alley IS NULL;
+
+SELECT COUNT(*)
+FROM houseprices
+WHERE saleprice > 100000 AND yearbuilt < 1950;
+
+SELECT DISTINCT neighborhood
+FROM houseprices;
+
+SELECT DISTINCT neighborhood, yearbuilt
+FROM houseprices
+ORDER BY neighborhood, yearbuilt DESC;
+
+
