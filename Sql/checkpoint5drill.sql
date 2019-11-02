@@ -61,11 +61,11 @@ AND year >= 2000
 ORDER BY year DESC, hwy DESC;
 
 --12.Write a query that counts the number of vehicles that are either Fords or Chevrolets and either compact cars or 2-seaters.
---SELECT COUNT(*) 
---FROM vehicles
---WHERE
-    --make = 'Ford' OR make = 'Chevrolet')
-    --AND class = 'Compact Cars' OR class = 'Two Seaters');
+SELECT COUNT(*) 
+FROM vehicles
+WHERE
+    make = 'Ford' OR make = 'Chevrolet'
+    AND class = 'Compact Cars' OR class = 'Two Seaters';
 
 
 SELECT COUNT(*) 
