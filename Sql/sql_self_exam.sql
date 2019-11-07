@@ -1,5 +1,5 @@
 --1.Write a query that allows you to inspect the schema of the naep table.
-SELECT column_name, data_type
+SELECT *
 FROM information_schema.columns
 WHERE table_name = 'naep';
 
@@ -28,16 +28,16 @@ ORDER BY state;
 --  that lists the states in the bottom 10 for avg_math_4_score in the year 2000.
 SELECT state AS bottom_10_states, avg_math_4_score
 FROM naep
-WHERE year = 2000
+WHERE year = 2000 AND avg_math_4_score IS NOT NULL
 GROUP BY bottom_10_states, avg_math_4_score
-ORDER BY avg_math_4_score
+ORDER BY avg_math_4_score 
 LIMIT 10;
 
 --6.Write a query that calculates the average avg_math_4_score rounded to the nearest 2 decimal 
 --  places over all states in the year 2000.
 SELECT state, ROUND(AVG(avg_math_4_score),2) AS rounded_avg_avg_math_4_score
-FROM naep
-WHERE year = 2000
+FROM naep 
+WHERE year = 2000 AND avg_math_4_score IS NOT NULL
 GROUP BY state;
 
 --7.Write a query that returns a field called below_average_states_y2000 that lists all states 
@@ -45,23 +45,29 @@ GROUP BY state;
 SELECT state, avg_math_4_score AS below_average_states_y2000
 FROM naep
 WHERE avg_math_4_score <
-	(SELECT SUM(avg_math_4_score)/COUNT(NULLIF(avg_math_4_score,0)) AS all_states_average_y2000
+	(SELECT AVG(avg_math_4_score AS all_states_average_y2000
 	FROM naep
 	WHERE year = 2000) AND year = 2000
 GROUP BY state, below_average_states_y2000;
 
+
 --8.Write a query that returns a field called scores_missing_y2000 that lists any states 
 --  with missing values in the avg_math_4_score column of the naep data table for the year 2000.
-WITH title_y2000 AS
-(
-	SELECT state, avg_math_4_score AS score_y2000
-	FROM naep
-	WHERE year = 2000
-	GROUP BY state, score_y2000
-)
+
+-- WITH title_y2000 AS
+-- (
+-- 	SELECT state, avg_math_4_score AS score_y2000
+-- 	FROM naep
+-- 	WHERE year = 2000
+-- 	GROUP BY state, score_y2000
+-- )
+-- SELECT state AS scores_missing_y2000
+-- FROM title_y2000
+-- WHERE score_y2000 IS NULL;
+	 
 SELECT state AS scores_missing_y2000
-FROM title_y2000
-WHERE score_y2000 IS NULL;
+FROM naep
+WHERE year = 2000 AND avg_math_4_score IS NULL;
 
 --9.Write a query that returns for the year 2000 the state, avg_math_4_score, 
 --  and total_expenditure from the naep table left outer joined with the finance table, 
@@ -74,3 +80,8 @@ ON naep.id = finance.id
 WHERE naep.year = 2000 AND avg_math_4_score IS NOT NULL
 GROUP BY naep.state, avg_math_4_score, total_expenditure
 ORDER BY total_expenditure DESC;
+	 
+	 
+	 
+	 
+	 
