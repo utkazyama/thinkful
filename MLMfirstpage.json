@@ -1,0 +1,12 @@
+[
+{"name": ["How to Model Volatility with ARCH and GARCH for Time Series Forecasting in Python"], "link": ["https://machinelearningmastery.com/develop-arch-and-garch-models-for-time-series-forecasting-in-python/"]},
+{"name": ["A Gentle Introduction to Exponential Smoothing for Time Series Forecasting in Python"], "link": ["https://machinelearningmastery.com/exponential-smoothing-for-time-series-forecasting-in-python/"]},
+{"name": ["A Gentle Introduction to SARIMA for Time Series Forecasting in Python"], "link": ["https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/"]},
+{"name": ["11 Classical Time Series Forecasting Methods in Python (Cheat Sheet)"], "link": ["https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/"]},
+{"name": ["A Standard Multivariate, Multi-Step, and Multi-Site Time Series Forecasting Problem"], "link": ["https://machinelearningmastery.com/standard-multivariate-multi-step-multi-site-time-series-forecasting-problem/"]},
+{"name": ["How to Convert a Time Series to a Supervised Learning Problem in Python"], "link": ["https://machinelearningmastery.com/convert-time-series-supervised-learning-problem-python/"]},
+{"name": ["Seasonal Persistence Forecasting With Python"], "link": ["https://machinelearningmastery.com/seasonal-persistence-forecasting-python/"]},
+{"name": ["How to Tune ARIMA Parameters in Python"], "link": ["https://machinelearningmastery.com/tune-arima-parameters-python/"]},
+{"name": ["Simple Time Series Forecasting Models to Test So That You Don\u2019t Fool Yourself"], "link": ["https://machinelearningmastery.com/simple-time-series-forecasting-models/"]},
+{"name": ["Feature Selection for Time Series Forecasting with Python"], "link": ["https://machinelearningmastery.com/feature-selection-time-series-forecasting-python/"]}
+]
